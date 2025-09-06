@@ -1,18 +1,18 @@
-<p align="center"><img src="https://www.google.com/search?q=https://i.ibb.co/nqsQG0jp/Screenshot-20250906-152222.jpg" alt="ACL-MBF Banner" width="700"/></p><h1 align="center">ACL-MBF</h1><p align="center"><strong>Sebuah script canggih dengan antarmuka modern dan performa tinggi.</strong></p><p align="center"><img src="https://www.google.com/search?q=https://img.shields.io/github/stars/AciLNiBoss/ACL-MBF%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26color%3DFFC107" alt="GitHub stars"><img src="https://www.google.com/search?q=https://img.shields.io/github/forks/AciLNiBoss/ACL-MBF%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26color%3D9C27B0" alt="GitHub forks"><img src="https://www.google.com/search?q=https://img.shields.io/github/license/AciLNiBoss/ACL-MBF%3Fstyle%3Dfor-the-badge%26color%3D2196F3" alt="License"></p>🚀 Tentang Alat IniACL-MBF bukan sekadar script biasa. Ini adalah alat yang dirancang untuk para profesional dan penggemar teknologi yang membutuhkan kecepatan, efisiensi, dan tampilan antarmuka yang memukau. Dibangun dengan Python dan dipercantik menggunakan library rich, alat ini memberikan pengalaman pengguna yang luar biasa.✨ Fitur UnggulanAntarmuka Modern: Tampilan terminal yang bersih, berwarna, dan mudah dibaca.Performa Cepat: Dioptimalkan untuk menjalankan tugas dengan kecepatan maksimal.Mudah Digunakan: Alur perintah yang intuitif, cocok untuk pemula maupun ahli.Ringan & Efisien: Tidak membebani perangkat Anda saat dijalankan.📲 Instalasi di TermuxIkuti langkah-langkah mudah di bawah ini untuk memulai:# Update & Upgrade package
+<div align="center"><img src="https://www.google.com/search?q=https://i.ibb.co/nqsQG0jp/Screenshot-20250906-152222.jpg" alt="ACL-MBF Banner" width="800"/><h1 style="border-bottom: none;"><b>ACL-MBF</b></h1><p><i>Script canggih dengan antarmuka modern dan performa tinggi.</i></p><p><a href="https://www.google.com/search?q=https://github.com/AciLNiBoss/ACL-MBF/stargazers"><img src="https://www.google.com/search?q=https://img.shields.io/github/stars/AciLNiBoss/ACL-MBF%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26color%3Dgold" alt="GitHub stars"></a><a href="https://www.google.com/search?q=https://github.com/AciLNiBoss/ACL-MBF/network/members"><img src="https://www.google.com/search?q=https://img.shields.io/github/forks/AciLNiBoss/ACL-MBF%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26color%3Dblueviolet" alt="GitHub forks"></a><a href="https://www.google.com/search?q=https://github.com/AciLNiBoss/ACL-MBF/blob/main/LICENSE"><img src="https://www.google.com/search?q=https://img.shields.io/github/license/AciLNiBoss/ACL-MBF%3Fstyle%3Dfor-the-badge%26color%3Dinformational" alt="License"></a></p></div>🚀 Tentang ACL-MBFACL-MBF adalah sebuah mahakarya yang dirancang untuk memberikan efisiensi maksimal dengan pengalaman pengguna yang tak tertandingi. Dibuat dengan presisi menggunakan Python dan dipercantik oleh library rich, alat ini mengubah cara Anda berinteraksi dengan terminal.✨ Fitur Unggulan🖥️ Antarmuka Modern: Nikmati tampilan terminal yang bersih, penuh warna, dan responsif.⚡ Performa Kilat: Dirancang untuk eksekusi tugas super cepat tanpa kompromi.🎯 Intuitif & Mudah: Alur perintah yang logis, sangat ramah bagi pemula maupun pengguna ahli.⚙️ Ringan & Efisien: Berjalan lancar tanpa membebani sumber daya sistem Anda.📲 Instalasi Cepat di TermuxMulai dalam hitungan menit dengan mengikuti langkah-langkah sederhana ini:# 1. Update & Upgrade package
 pkg update && pkg upgrade
 
-# Install package yang dibutuhkan
+# 2. Install package yang dibutuhkan
 pkg install python git
 
-# Install module python
+# 3. Install module python
 pip install requests bs4 rich
 
-# Clone repository dari GitHub
+# 4. Clone repository dari GitHub
 git clone [https://github.com/AciLNiBoss/ACL-MBF](https://github.com/AciLNiBoss/ACL-MBF)
 
-# Masuk ke direktori script
+# 5. Masuk ke direktori script
 cd ACL-MBF
 
-# Jalankan script
+# 6. Jalankan keajaiban!
 python MBF.py
-🌐 Situs Web ResmiDapatkan informasi terbaru, pembaruan, dan skrip lainnya di situs web resmi kami.👉 Kunjungi ACL-SCRIPT 👈⚠️ PeringatanGunakan alat ini dengan bijak dan untuk tujuan yang sah. Pengembang tidak bertanggung jawab atas segala bentuk penyalahgunaan yang mungkin terjadi. Anda adalah satu-satunya yang bertanggung jawab atas tindakan Anda.<p align="center">Dibuat dengan ❤️ oleh <strong>AciLNiBoss</strong></p>
+🌐 Kunjungi Situs Resmi KamiDapatkan akses ke skrip eksklusif lainnya, berita terbaru, dan pembaruan penting.<div align="center"><a href="https://acl-script.vercel.app/" target="_blank"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Kunjungi-ACL%2520SCRIPT-blue%3Fstyle%3Dfor-the-badge%26logo%3Dvercel%26logoColor%3Dwhite" alt="Website Resmi"></a></div>⚠️ Peringatan PenggunaanAlat ini diciptakan untuk tujuan edukasi dan pengembangan. Pengembang tidak bertanggung jawab atas penyalahgunaan apa pun. Gunakan dengan bijak dan bertanggung jawab.<div align="center"><p>Dibuat dengan kode dan kopi oleh <b>AciLNiBoss</b></p></div>
