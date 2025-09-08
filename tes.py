@@ -3,8 +3,7 @@ import shutil
 import sys
 
 # ==========================================
-# Script Python hapus semua isi SD card
-# ⚠️ PERINGATAN: semua file akan hilang permanen
+#
 # ==========================================
 
 # Lokasi default mount storage di Termux
