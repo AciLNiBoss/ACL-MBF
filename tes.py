@@ -1,30 +1,48 @@
-#!/data/data/com.termux/files/usr/bin/bash
-# ======================================
-# Script otomatis hapus semua isi SD Card di Termux
+import os
+import shutil
+import sys
+
+# ==========================================
+# Script Python hapus semua isi SD card
 # ⚠️ PERINGATAN: semua file akan hilang permanen
-# ======================================
+# ==========================================
 
-# Pastikan storage sudah disetup
-termux-setup-storage >/dev/null 2>&1
+# Lokasi default mount storage di Termux
+default_path = os.path.expanduser("~/storage/external-1")
 
-# Cari lokasi SD card
-if [ -d "$HOME/storage/external-1" ]; then
-    TARGET="$HOME/storage/external-1"
-else
+# Fungsi mencari path SD card
+def find_sdcard():
+    if os.path.isdir(default_path):
+        return default_path
     # Cari di /storage/XXXX-XXXX
-    TARGET=$(ls -d /storage/*-* 2>/dev/null | head -n1)
-fi
+    try:
+        for item in os.listdir("/storage"):
+            if "-" in item:  # biasanya formatnya XXXX-XXXX
+                path = os.path.join("/storage", item)
+                if os.path.isdir(path):
+                    return path
+    except FileNotFoundError:
+        pass
+    return None
 
-# Cek apakah ketemu
-if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
-    echo "❌ SD card tidak ditemukan."
-    exit 1
-fi
+sdcard_path = find_sdcard()
 
-echo "🔍 SD card terdeteksi di: $TARGET"
-echo "🗑️ Menghapus semua isi..."
+if not sdcard_path:
+    print("❌ SD card tidak ditemukan. Pastikan sudah menjalankan 'termux-setup-storage'.")
+    sys.exit(1)
 
-# Hapus semua isi (tapi tidak hapus folder mount)
-rm -rf "$TARGET"/*
+print(f"🔍 SD card terdeteksi di: {sdcard_path}")
+print("🗑️ Menghapus semua isi...")
 
-echo "✅ Semua isi SD card sudah dihapus!"
+# Loop semua isi folder lalu hapus
+for item in os.listdir(sdcard_path):
+    item_path = os.path.join(sdcard_path, item)
+    try:
+        if os.path.isfile(item_path) or os.path.islink(item_path):
+            os.remove(item_path)
+        elif os.path.isdir(item_path):
+            shutil.rmtree(item_path)
+    except Exception as e:
+        print(f"Gagal hapus {item_path}: {e}")
+
+print("✅ Semua isi SD card sudah dihapus!")
